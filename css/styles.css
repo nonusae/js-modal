@@ -3,6 +3,52 @@
  * --------------------------
  */
 
+@keyframes point{
+  0%{
+    opacity: 0;
+    transform: translateY(3em);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0em);
+  }
+}
+
+@keyframes zoom{
+  0%{
+    opacity: 0;
+    transform: scale(0.25);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wave{
+  0%{
+    transform: rotate(0);
+  }
+  20%{
+    transform: rotate(15deg)
+  }
+  40%{
+    transform: rotate(-15deg)
+  }
+  60%{
+    transform: rotate(15deg)
+  }
+  80%{
+    transform: rotate(-15deg)
+
+  }
+  100%{
+    transform: rotate(0deg)
+  }
+}
+
 :root {
   --color-purp: #8da1ff;
   --color-lily: #e9fbff;
@@ -79,6 +125,12 @@ h2 {
 .modal-is-open .modal-container {
   opacity: 1;
   z-index: 1;
+  transition-delay: 0.3s;
+
+}
+
+.modal-container {
+  transition: opacity 0.3s ease-out, z-index 0s linear 0.3s;
 }
 
 .modal {
@@ -114,4 +166,20 @@ h2 {
 
 .modal__content > * + * {
   margin-top: 0.75em;
+}
+
+.point-hand {
+  animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.wave-hand {
+  transform-origin: center bottom;
+  animation: zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    /* slightly delay wave animation to occur layer zoom animation */
+    wave 1s 0.55s ease-in-out;
+  animation-play-state: paused;
+}
+
+.modal-is-open .wave-hand {
+  animation-play-state: running;
 }
