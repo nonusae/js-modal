@@ -1,5 +1,5 @@
 # Javascript Modal
-A particular javascript modal implementation with event stopPropagation used
+A particular javascript modal implementation animate with TimelineMax()
 
 ---
 
@@ -11,4 +11,4 @@ A particular javascript modal implementation with event stopPropagation used
 
 ---
 
-![modal](https://user-images.githubusercontent.com/6436298/35855151-f93d15d2-0b64-11e8-8ea2-d036f278d32f.gif)
+![modal](https://user-images.githubusercontent.com/6436298/37258523-f8df2614-25ab-11e8-82b5-28b179e7c4a9.gif)
